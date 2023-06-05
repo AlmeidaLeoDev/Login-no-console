@@ -12,29 +12,30 @@ namespace Cadastro_de_Usuarios
         private static string ReadPassword()
         {
             string senhaOculta = "";
-            ConsoleKeyInfo key;
+            ConsoleKeyInfo chave;
             do
             {
-                key = Console.ReadKey(true);
+                chave = Console.ReadKey(true);
 
-                if (key.Key != ConsoleKey.Backspace && key.Key != ConsoleKey.Enter)
+                if (chave.Key != ConsoleKey.Backspace && chave.Key != ConsoleKey.Enter)
                 {
-                    senhaOculta += key.KeyChar;
+                    senhaOculta += chave.KeyChar;
                     Console.Write("*");
                 }
                 else
                 {
-                    if (key.Key == ConsoleKey.Backspace && senhaOculta.Length > 0)
+                    if (chave.Key == ConsoleKey.Backspace && senhaOculta.Length > 0)
                     {
                         senhaOculta = senhaOculta.Remove(senhaOculta.Length - 1);
                         Console.Write("\b\b");
                     }
                 }
-            } while (key.Key != ConsoleKey.Enter);
+            } while (chave.Key != ConsoleKey.Enter);
 
-            Console.WriteLine(); // Adicionando uma nova linha após a senha ser lida
+            Console.WriteLine("\r\n"); // Adicionando uma nova linha após a senha ser lida
 
             return senhaOculta;
+
         }
 
         static void Main(string[] args)
@@ -44,14 +45,16 @@ namespace Cadastro_de_Usuarios
             {
                 Console.WriteLine("Digite C para se cadastrar ou S para sair");
                 opcao = Console.ReadKey(true).Key.ToString().ToLower();
-                if(opcao == "c")
+                Console.WriteLine();
+                if (opcao == "c")
                 {
                     Console.WriteLine("Digite o seu nome de usuário: ");
                     string usuario = Console.ReadLine();
-                    Console.WriteLine("Digite uma senha de até 10 digitos: ");
+                    Console.WriteLine("Digite uma senha: ");
                     string senha = ReadPassword();
 
                     Console.WriteLine("O usuário e senha foram cadastrados com sucesso!");
+                    Console.WriteLine("Pressione qualquer tecla para encerrar");
                     Console.ReadLine();
                     Console.Clear();
                 }
