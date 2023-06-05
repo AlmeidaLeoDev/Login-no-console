@@ -7,7 +7,7 @@ Aqui está uma explicação passo a passo do funcionamento do programa:
 3. A classe principal é Program, declarada como internal, o que significa que ela só pode ser acessada de dentro do mesmo assembly (neste caso, o próprio projeto).
 4. O método ReadPassword() é responsável por ler a senha do usuário sem exibi-la no console. Ele retorna a senha digitada pelo usuário como uma string.
 5. Dentro do método ReadPassword(), temos um loop do-while que continua a executar até que o usuário pressione a tecla Enter. O loop é usado para ler os caracteres da senha.
-6. key = Console.ReadKey(true); lê a próxima tecla pressionada pelo usuário, sem exibi-la no console. O parâmetro true passado para Console.ReadKey() indica que a tecla deve ser lida sem ecoar no console.
+6. chave = Console.ReadKey(true); lê a próxima tecla pressionada pelo usuário, sem exibi-la no console. O parâmetro true passado para Console.ReadKey() indica que a tecla deve ser lida sem ecoar no console.
 7. O bloco if verifica se a tecla pressionada pelo usuário não é a tecla Backspace nem a tecla Enter. Se não for, significa que o usuário digitou um caractere válido da senha.
 8. senhaOculta += key.KeyChar; adiciona o caractere digitado à variável senhaOculta, que armazena a senha oculta. O key.KeyChar contém o caractere digitado pelo usuário.
 9. Console.Write("*"); exibe um asterisco no console para fornecer um feedback visual de que um caractere foi digitado. Como o caractere digitado não é exibido, o asterisco é usado para indicar que algo foi digitado.
